@@ -1,0 +1,6 @@
+{
+  "name": "mirror-app-frontend-test",
+  "scripts": {
+    "start": "npm run start --prefix server"
+  }
+}
