@@ -1,6 +1,15 @@
 {
   "name": "mirror-app-frontend-test",
   "scripts": {
-    "start": "npm run start --prefix server"
+    "client": "npm run dev --prefix client",
+    "server": "npm run start --prefix server",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "prepare:client": "cd client && npm i",
+    "prepare:server": "cd server && npm i",
+    "prepare": "npm run prepare:client && npm run prepare:server",
+    "postinstall": "npm run prepare"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
