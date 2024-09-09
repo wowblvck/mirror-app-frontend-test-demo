@@ -2,7 +2,7 @@
 
 Данный сервер разработан в рамках тестового задания на Frontend-разработчика.
 
-В рамках разработки использовались следующие пакеты:
+Используются следующие инструменты и библиотеки:
 
 - [JSON-Server](json-server)
 - [Faker.js](faker-js)
@@ -20,20 +20,29 @@
 
 ## API
 
-1. GET запрос настроек (`/settings`)
+1. GET запрос настроек (`/settings`). При каждом запросе генерируются новые настройки.
 
 ```json
 {
-    "layout": string,
+    "layout": {
+      "current": string,
+      "params": {
+        "grid": {
+          "columns": number,
+          "rows": number,
+        },
+        "masonry": {
+          "columns": number,
+          "rows": number,
+        }
+      }
+    },
     "template": string,
-    "columns": {
-        "grid": number,
-        "masonry": number
-    }
+    "navigation": string
 }
 ```
 
-2. GET запрос постов вместе с пользователем (`/posts?_expand=user`)
+2. GET запрос постов (`/posts`)
 
 ```json
 [
@@ -42,13 +51,9 @@
     "id": string,
     "comments": number,
     "likes": number,
+    "date": string,
     "permalink": string,
-    "userId": string,
-    "user": {
-        "id": string,
-        "username": string,
-        "postId": string
-    }
+    "userId": string
   }
 ],
 ```

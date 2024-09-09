@@ -3,11 +3,20 @@ import { Settings } from "./interface";
 
 export const createRandomSettings = (): Settings => {
   return {
-    layout: faker.helpers.arrayElement(["grid", "masonry"]),
-    template: faker.helpers.arrayElement(["classic", "hover"]),
-    columns: {
-      grid: faker.number.int({ min: 1, max: 10 }),
-      masonry: faker.number.int({ min: 1, max: 5 }),
+    layout: {
+      current: faker.helpers.arrayElement(["grid", "masonry"]),
+      params: {
+        grid: {
+          columns: faker.number.int({ min: 1, max: 5 }),
+          rows: faker.number.int({ min: 1, max: 5 }),
+        },
+        masonry: {
+          columns: faker.number.int({ min: 1, max: 5 }),
+          rows: faker.number.int({ min: 1, max: 5 }),
+        },
+      },
     },
+    template: faker.helpers.arrayElement(["classic", "hover"]),
+    navigation: faker.helpers.arrayElement(["load-more", "pagination"]),
   };
 };
