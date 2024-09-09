@@ -11,6 +11,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@/app": resolvePath("./src/app"),
+      "@/pages": resolvePath("./src/pages"),
+      "@/features": resolvePath("./src/features"),
+      "@/widgets": resolvePath("./src/widgets"),
+      "@/entities": resolvePath("./src/entities"),
+      "@/shared": resolvePath("./src/shared"),
+      "@/": resolvePath("./src"),
     },
   },
 });
