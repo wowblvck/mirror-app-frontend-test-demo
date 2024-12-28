@@ -10,6 +10,6 @@
     "postinstall": "npm run prepare"
   },
   "devDependencies": {
-    "concurrently": "^9.0.0"
+    "concurrently": "^9.1.1"
   }
 }
