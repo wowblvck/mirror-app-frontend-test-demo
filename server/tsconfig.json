@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "target": "ES6",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "allowJs": true,
     "sourceMap": true,
     "esModuleInterop": true,
@@ -12,11 +12,8 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "lib": ["ES6"],
     "allowSyntheticDefaultImports": true
   },
-  "ts-node": {
-    "esm": true
-  },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["./src/**/*"]
 }

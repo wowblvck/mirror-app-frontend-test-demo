@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://mirror-app-frontend-test-demo-server.vercel.app/:match*"
+    }
+  ]
+}
